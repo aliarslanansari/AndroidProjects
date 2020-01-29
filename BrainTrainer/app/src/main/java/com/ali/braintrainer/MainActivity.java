@@ -83,17 +83,19 @@ public class MainActivity extends AppCompatActivity {
         noOfQues=0;
         resultTextView.setText("");
         timerTextView.setText("30s");
-        new CountDownTimer(30000, 1000) {
+        new CountDownTimer(30000 , 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
                 timerTextView.setText(String.valueOf(millisUntilFinished/1000)+"s");
+                sumTextView.setVisibility(View.VISIBLE);
+                playAgain.setVisibility(View.INVISIBLE);
             }
             @Override
             public void onFinish() {
-                resultTextView.setText("Score: "+String.valueOf(score)+"/"+String.valueOf(noOfQues));
+                gridLayout.setVisibility(View.INVISIBLE);
                 playAgain.setVisibility(View.VISIBLE);
-                gridLayout.setEnabled(false);
-                this.cancel();
+                sumTextView.setVisibility(View.INVISIBLE);
+                resultTextView.setText("Score: "+score+"/"+noOfQues);
             }
         }.start();
     }

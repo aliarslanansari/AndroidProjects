@@ -105,9 +105,10 @@
 
         <TextView
             android:id="@+id/resultTextView"
-            android:layout_width="155dp"
-            android:layout_height="45dp"
+            android:layout_width="302dp"
+            android:layout_height="63dp"
             android:text="Correct!"
+            android:textAlignment="center"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -170,6 +171,7 @@
             android:layout_marginTop="28dp"
             android:onClick="playAgain"
             android:text="Play Again"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
