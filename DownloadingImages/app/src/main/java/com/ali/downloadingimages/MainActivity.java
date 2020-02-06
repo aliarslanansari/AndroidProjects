@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
         //https://sketchok.com/images/articles/01-cartoons/001-simpsons/20/14.jpg
         ImageDownloader imageDownloader = new ImageDownloader();
         Bitmap myBitmap;
-        myBitmap = imageDownloader.execute("https://sketchok.com/images/articles/01-cartoons/001-simpsons/20/14.jpg").get();
+        myBitmap = imageDownloader.execute("https://lh3.googleusercontent.com/-2G7jRn3ORWI/XJcrJG6bqFI/AAAAAAAAAJg/8QH2HFI5pyw0hBzFGn0xsF7lQQE5DnOogCEwYBhgL/w105-h140-p/IMG_20170102_141123.jpg").get();
+                //("https://sketchok.com/images/articles/01-cartoons/001-simpsons/20/14.jpg").get();
         downloadedImage.setImageBitmap(myBitmap);
     }
     @Override
