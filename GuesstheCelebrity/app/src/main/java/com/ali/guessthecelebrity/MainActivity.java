@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         int incorrectAnswerLocation;
         for(int i=0; i<4; i++){
             if(i==locationOfCorrectAns){
-                answers[i]= celebNames.get(chosenCeleb)+"(Correct)";
+                answers[i]= celebNames.get(chosenCeleb);
             }
             else{
                 incorrectAnswerLocation = rand.nextInt(celebNames.size());
