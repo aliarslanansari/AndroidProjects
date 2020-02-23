@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5D1FD"
+    tools:context=".RegisterUserActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enter your details"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_male"
+            android:focusable="auto"
+            android:hint="Full Name"
+            android:inputType="textPersonName"
+            android:selectAllOnFocus="true" />
+
+        <EditText
+            android:id="@+id/usernameEditText"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_male"
+            android:ems="10"
+            android:hint="User Name"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/emaiEditText"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_mail"
+            android:ems="10"
+            android:hint="Email"
+            android:inputType="textWebEmailAddress" />
+
+
+        <EditText
+            android:id="@+id/passwordEditText"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_lock"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/confirmPasswordEditText"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_lock"
+            android:hint="Confirm Password"
+            android:inputType="textPassword" />
+
+        <EditText
+            android:id="@+id/genderEditText"
+            android:inputType="none"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_male"
+            android:hint="Gender" />
+
+        <EditText
+            android:id="@+id/contactNoEditText"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:digits="0123456789+"
+            android:drawableLeft="@drawable/ic_smartphone"
+            android:hint="Contact no"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/emergencyEditText1"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_sos"
+            android:hint="Emergency Contact No 1"
+            android:inputType="phone" />
+
+
+        <EditText
+            android:id="@+id/emergencyEditText2"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_sos"
+            android:hint="Emergency Contact No 2"
+            android:inputType="phone" />
+
+        <EditText
+            android:id="@+id/emergencyEditText3"
+            style="@style/MyEditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+
+            android:layout_marginBottom="10dp"
+            android:drawableLeft="@drawable/ic_sos"
+            android:hint="Emergency Contact No 3"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/alreadyAccText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="Already have an account?"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/registerButton"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:text="Register"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp" />
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="@color/colorPrimaryDark"
+    tools:targetApi="lollipop">
+    <item>
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:padding="10dp"
+            android:shape="rectangle">
+            <solid android:color="@color/notification" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <item android:id="@android:id/background">
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+            android:padding="10dp"
+            android:shape="rectangle">
+            <solid android:color="@color/titlebar" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+</ripple>
