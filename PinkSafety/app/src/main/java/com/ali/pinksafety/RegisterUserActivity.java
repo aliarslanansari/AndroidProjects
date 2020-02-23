@@ -107,18 +107,18 @@ public class RegisterUserActivity extends AppCompatActivity {
         }
         @Override
         protected void onPreExecute() {
-            //TODO: show progress dialog
+            //show progress dialog
             dialog.setMessage("Detecting Gender, please wait.");
             dialog.show();
         }
         @Override
         protected void onProgressUpdate(String... progress) {
-            //TODO: update progress
+            //update progress
             // detectionProgressDialog.setMessage(progress[0]);
         }
         @Override
         protected void onPostExecute(Face[] result) {
-            //TODO: update face frames
+            //update face frames
             if (dialog.isShowing()) {
                 dialog.dismiss();
             }
