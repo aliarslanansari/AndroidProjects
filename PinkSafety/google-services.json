@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "563897268064",
+    "firebase_url": "https://ali-arslan.firebaseio.com",
+    "project_id": "ali-arslan",
+    "storage_bucket": "ali-arslan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563897268064:android:6b564050319ce323b69005",
+        "android_client_info": {
+          "package_name": "com.ali.pinksafety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "563897268064-tfs0njmr63e4p67it2rh9n5trrsb7tud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ali.pinksafety",
+            "certificate_hash": "c565e981d1b9ca37924ca14bb50021398e15a3c7"
+          }
+        },
+        {
+          "client_id": "563897268064-c399c852hq92efajdr5lrk9pi3b6uho1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMdTFwi0w5tJksWmj9YZ515E2UX_w4-dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "563897268064-c399c852hq92efajdr5lrk9pi3b6uho1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
