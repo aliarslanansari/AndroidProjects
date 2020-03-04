@@ -77,7 +77,7 @@ public class RegisterUserActivity extends AppCompatActivity {
         @Override
         protected Face[] doInBackground(Bitmap... bitmaps) {
             ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-            bitmaps[0].compress(Bitmap.CompressFormat.JPEG, 10, outputStream);
+            bitmaps[0].compress(Bitmap.CompressFormat.JPEG, 20, outputStream);
             ByteArrayInputStream inputStream = new ByteArrayInputStream(outputStream.toByteArray());
             try {
                 //publishProgress("Detecting...");
@@ -131,7 +131,7 @@ public class RegisterUserActivity extends AppCompatActivity {
             }
             else
             {
-                gender = "Null Result";
+                gender = "Null result";
             }
             Log.i("ImageFace", gender);
             if(!gender.equals("female")){
@@ -192,9 +192,7 @@ public class RegisterUserActivity extends AppCompatActivity {
         faceFeatureClass = new FaceFeatureClass();
         takePic = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         dispatchPictureTakerAction();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CAMERA},2);
-        }
+
         FinalRegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -247,6 +245,10 @@ public class RegisterUserActivity extends AppCompatActivity {
         progressDialog.setMessage("Please Wait");
         progressDialog.setIndeterminate(true);
         progressDialog.show();
+
+
+
+        session.storeEmergencyCon(emergency1.getText().toString().trim(),emergency2.getText().toString().trim(),emergency3.getText().toString().trim());
 
         String url = "https://ali-arslan-ansari.000webhostapp.com/register_user.php";
         RequestQueue requestQueue = Volley.newRequestQueue(RegisterUserActivity.this);

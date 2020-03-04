@@ -1,12 +1,29 @@
 package com.ali.pinksafety;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.BroadcastReceiver;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.content.ServiceConnection;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
+import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +39,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HurlStack;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.snackbar.Snackbar;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +65,7 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 import javax.security.cert.CertificateException;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity{
 
     private Button loginButton;
     private Button gotoRegisterButton;
@@ -64,6 +82,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // Check that the user hasn't revoked permissions by going to Settings.
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.SEND_SMS,Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.CAMERA},2);
+        }
         session = new SessionManager(this);
         Log.i("IsLoggedin",String.valueOf(session.isLoggedIn()));
 
@@ -102,20 +126,32 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    @Override
+    /*@Override
     protected void onResume() {
         super.onResume();
         Log.i("checkAct","onResumeLogin");
+
+    }*/
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        /*if (session.isLoggedIn() == true) {
+            HashMap<String, String> roles = session.getUserDetails();
+            mob = roles.get(SessionManager.KEY_EMAIL_admin);
+            pswd = roles.get(SessionManager.KEY_PASSWORD_admin);
+            Intent i = new Intent(LoginActivity.this,HomeActivity.class);
+            Log.i("IsLoggedIn","True");
+            startActivity(i);
+        }*/
     }
 
     private void Login(){
 
         progressDialog = new ProgressDialog(LoginActivity.this);
-        // Showing progress dialog at user registration time.
         progressDialog.setMessage("Please Wait");
         progressDialog.setIndeterminate(true);
         progressDialog.show();
-
         String url = "https://ali-arslan-ansari.000webhostapp.com/login_api.php";
         RequestQueue requestQueue = Volley.newRequestQueue(LoginActivity.this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -144,8 +180,6 @@ public class LoginActivity extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
-
             }
         }, new Response.ErrorListener() {
             @Override

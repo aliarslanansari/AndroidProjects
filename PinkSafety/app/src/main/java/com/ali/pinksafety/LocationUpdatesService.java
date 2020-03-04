@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-package com.atomsindia.local;
+package com.ali.pinksafety;
 
 import android.app.ActivityManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import com.android.volley.Request;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
@@ -33,12 +32,14 @@ import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.IBinder;
 import android.os.Looper;
-import android.support.annotation.NonNull;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
+
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -55,21 +56,12 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.annotation.Nullable;
 
 //import androidx.annotation.NonNull;
 //import androidx.core.app.NotificationCompat;
@@ -491,7 +483,7 @@ public class LocationUpdatesService extends Service {
         Log.d("resML", String.valueOf(latitude));
         Log.d("resMLL", String.valueOf(longitude));
 
-        Map<String , String> driverMap = new HashMap<>();
+        Map<String, String> driverMap = new HashMap<>();
 
         driverMap.put("name" , String.valueOf(latitude));
         driverMap.put("email" , String.valueOf(longitude));
