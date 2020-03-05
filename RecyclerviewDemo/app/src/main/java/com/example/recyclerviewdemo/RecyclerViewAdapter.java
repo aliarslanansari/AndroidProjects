@@ -1,9 +1,11 @@
 package com.example.recyclerviewdemo;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,10 +14,11 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter <RecyclerViewAdapter.MyViewHolder> {
     @NonNull
-
     List<String> list;
-    public RecyclerViewAdapter(List<String> list){
+    private Context mContext;
+    public RecyclerViewAdapter(Context context,List<String> list){
         this.list = list;
+        mContext = context;
     }
 
     @Override
@@ -27,8 +30,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter <RecyclerViewAdapt
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
         holder.textView.setText(list.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "Clicked "+String.valueOf(list.get(position)), Toast.LENGTH_SHORT).show();            }
+        });
 
     }
 
